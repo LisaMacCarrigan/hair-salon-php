@@ -1,0 +1,45 @@
+$ /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+
+//----------------------------- CREATE DATABASE ------------------------------//
+
+mysql> CREATE DATABASE hair_salon;
+mysql> USE hair_salon;
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hair_salon         |
+| mysql              |
+| performance_schema |
++--------------------+
+
+//-------------------------- CREATE TABLE stylist ----------------------------//
+
+CREATE TABLE stylist (id serial PRIMARY KEY, name varchar (255));
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_hair_salon |
++----------------------+
+| stylist              |
++----------------------+
+
+mysql> DESCRIBE stylist;
++-------+---------------------+------+-----+---------+----------------+
+| Field | Type                | Null | Key | Default | Extra          |
++-------+---------------------+------+-----+---------+----------------+
+| id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(255)        | YES  |     | NULL    |                |
++-------+---------------------+------+-----+---------+----------------+
+
+//--------------------------- CREATE TABLE client ----------------------------//
+
+mysql> CREATE TABLE client (id serial PRIMARY KEY, name varchar (255), stylist_id int);
+mysql> DESCRIBE client;
++------------+---------------------+------+-----+---------+----------------+
+| Field      | Type                | Null | Key | Default | Extra          |
++------------+---------------------+------+-----+---------+----------------+
+| id         | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(255)        | YES  |     | NULL    |                |
+| stylist_id | int(11)             | YES  |     | NULL    |                |
++------------+---------------------+------+-----+---------+----------------+
