@@ -10,10 +10,39 @@ This is a web application for a hair salon that allows an owner to add stylists,
 
 ## Specifications
 
-#### 1. .
+#### 1. SAVE NEW STYLIST.
 
 * Example Input:
 * Example Output:
+
+#### 2. GET/VIEW ALL STYLISTS.
+
+* Example Input:
+* Example Output:
+
+#### 3. DELETE ALL STYLISTS
+
+* Example Input:
+* Example Output:
+
+#### 4. FIND STYLIST
+
+* Example Input:
+* Example Output:
+
+#### 5. UPDATE STYLIST
+
+* Example Input:
+* Example Output:
+
+#### 6. GET/VIEW ALL CLIENTS FOR A GIVEN STYLIST (via name)
+
+* Example Input:
+* Example Output:
+
+NOTE - Add similar specifications for client-centric user interactions
+
+
 
 ## Setup/Installation Requirements
 
