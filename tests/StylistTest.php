@@ -5,6 +5,7 @@
     */
 
     require_once "src/Stylist.php";
+    require_once "src/Client.php"; // this might not be necessary
 
     $server = 'mysql:host=localhost:8889;dbname=hair_salon_test';
     $username = 'root';
@@ -72,6 +73,22 @@
 
             // ASSERT
             $this->assertEquals([], $result);
+
+        }
+
+        function test_find() {
+
+            // ARRANGE
+            $id = null;
+            $name = "Kyle Krieger";
+            $new_stylist = new Stylist($id, $name);
+            $new_stylist->save();
+
+            // ACT
+            $result = Stylist::find($new_stylist->getId());
+
+            // ASSERT
+            $this->assertEquals($new_stylist, $result);
 
         }
 

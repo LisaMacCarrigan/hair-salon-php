@@ -44,6 +44,21 @@
             $GLOBALS['DB']->exec("DELETE FROM stylists;");
         }
 
+        static function find($search_id) {
+            $stylist_search_result = null;
+            $stylists = Stylist::getAll();
+            foreach($stylists as $stylist) {
+                $stylist_id = $stylist->getId();
+                if ($stylist_id == $search_id) {
+                    $stylist_search_result = $stylist;
+                }
+                return $stylist_search_result;
+            }
+        }
+
+        // add update
+
+        // add method to get Clients
 
 
     }
