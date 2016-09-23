@@ -43,3 +43,14 @@ mysql> DESCRIBE client;
 | name       | varchar(255)        | YES  |     | NULL    |                |
 | stylist_id | int(11)             | YES  |     | NULL    |                |
 +------------+---------------------+------+-----+---------+----------------+
+
+mysql> RENAME TABLE client to clients;
+mysql> RENAME TABLE stylist TO stylists;
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_hair_salon |
++----------------------+
+| clients              |
+| stylists             |
++----------------------+
