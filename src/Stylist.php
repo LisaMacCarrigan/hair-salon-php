@@ -56,7 +56,10 @@
             }
         }
 
-        // add update
+        function updateStylist($new_stylist_name) {
+          $GLOBALS['DB']->exec("UPDATE stylists SET name = '{$new_stylist_name}' WHERE id = {$this->getId()};");
+          $this->setStylistName($new_stylist_name);
+        }
 
         // add method to get Clients
 

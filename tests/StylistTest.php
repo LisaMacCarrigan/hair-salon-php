@@ -92,6 +92,24 @@
 
         }
 
+        function test_UpdateStylist() {
+
+          // ARRANGE
+          $id = null;
+          $name = "Kyle Krieger";
+          $new_stylist = new Stylist($id, $name);
+          $new_stylist->save();
+
+          $new_stylist_name = "Nicky Clarke";
+
+          // ACT
+          $new_stylist->updateStylist($new_stylist_name);
+
+          // ASSERT
+          $this->assertEquals($new_stylist_name, $new_stylist->getStylistName());
+
+        }
+
     }
 
 ?>
