@@ -58,6 +58,7 @@
         function test_deleteAll() {
 
             // ARRANGE
+                // ---- save a new stylist ----
             $id = null;
             $name_1 = "Kyle Krieger";
             $new_stylist_1 = new Stylist($id, $name_1);

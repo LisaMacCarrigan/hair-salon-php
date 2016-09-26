@@ -1,4 +1,4 @@
- <!-- __construct, getters and setters, save, getAll, deleteAll, find, update, and delete. -->
+
 <?php
 
     class Stylist {
@@ -11,7 +11,7 @@
             $this->name = $stylist_name_input;
         }
 
-        function getid() {
+        function getId() {
             return $this->id;
         }
 
@@ -61,7 +61,21 @@
           $this->setStylistName($new_stylist_name);
         }
 
-        // add method to get Clients
+        function getClients() {
+            $clients = array();
+
+            $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {$this->getId()};");
+
+            foreach ($returned_clients as $client) {
+              $id = $client["id"];
+              $name = $client["name"];
+              $stylist_id = $client["stylist_id"];
+
+              $new_client = new Client($id, $name, $stylist_id);
+              array_push($clients, $new_client);
+
+            }
+        }
 
 
     }
