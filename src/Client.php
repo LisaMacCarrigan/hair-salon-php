@@ -48,7 +48,7 @@
         {
             $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients");
             $clients = array();
-            foreach ($returned_clients as $client) {
+            foreach($returned_clients as $client) {
                 $id = $client['id'];
                 $name = $client['name'];
                 $stylist_id = $client['stylist_id'];
@@ -62,6 +62,28 @@
         {
             $GLOBALS['DB']->exec("DELETE FROM clients;");
         }
-    }
+
+        static function find($search_id) {
+            $client_search_result = null;
+            $clients = Client::getAll();
+            foreach($clients as $client)
+            {
+                $client_id = $client->getId();
+                if ($client_id == $search_id)
+                {
+                    $client_search_result = $client;
+                }
+                return $client_search_result;
+            }
+        }
+
+        function updateClient($new_client_name)
+        {
+            $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_client_name}' WHERE id = {$this->getId()};");
+            $this->setClientName($new_client_name);
+        }
+    // 
+    //     function getStylists()
+    // }
 
 ?>
