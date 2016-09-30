@@ -18,7 +18,7 @@
             Stylist::deleteAll();
         }
 
-        function test_save() {
+        function testSave() {
 
             // ARRANGE
             $id = null;
@@ -34,7 +34,7 @@
 
         }
 
-        function test_getAll() {
+        function testGetAll() {
 
             // ARRANGE
                 // ---- save a new stylist ----
@@ -55,7 +55,7 @@
 
         }
 
-        function test_deleteAll() {
+        function testDeleteAll() {
 
             // ARRANGE
                 // ---- save a new stylist ----
@@ -77,7 +77,7 @@
 
         }
 
-        function test_find() {
+        function testFind() {
 
             // ARRANGE
             $id = null;
@@ -93,7 +93,7 @@
 
         }
 
-        function test_UpdateStylist() {
+        function testUpdateStylist() {
 
           // ARRANGE
           $id = null;
