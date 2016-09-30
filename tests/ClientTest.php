@@ -15,8 +15,48 @@
 
     class ClientTest extends PHPUnit_Framework_TestCase {
         protected function tearDown() {
+            Client::deleteAll();
             Stylist::deleteAll();
         }
+
+        function testSave() {
+
+            //Arrange
+            $id = null;
+            $name = "Lisa Marie";
+            $stylist_id = 1;
+            $new_client_test = new Client($id, $name, $stylist_id);
+            $new_client_test->save();
+
+            //Act
+            $result = $new_client_test::getAll();
+
+            //Assert
+
+            $this->assertEquals($new_client_test, $result[0]);
+        }
+
+        // function testGetAll() {
+        //
+        //     //Arrange
+        //
+        //
+        //     //Act
+        //
+        //
+        //     //Assert
+        // }
+
+        // function testDeleteAll() {
+        //
+        //     //Arrange
+        //
+        //
+        //     //Act
+        //
+        //
+        //     //Assert
+        // }
     }
 
 
