@@ -82,8 +82,6 @@
             $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_client_name}' WHERE id = {$this->getId()};");
             $this->setClientName($new_client_name);
         }
-    // 
-    //     function getStylists()
-    // }
+
 
 ?>
