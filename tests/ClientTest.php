@@ -43,14 +43,14 @@
             $id = null;
             $name_1 = "Lisa Marie";
             $stylist_id = 1;
-            $new_client_1 = new Client($name, $stylist_id, $id);
+            $new_client_1 = new Client($id, $name_1, $stylist_id);
             $new_client_1->save();
 
                 // ---- save another new client ----
             $id = null;
             $name_2 = "Jane Doe";
             $stylist_id = 1;
-            $new_client_2 = new Client($name, $stylist_id, $id);
+            $new_client_2 = new Client($id, $name_2, $stylist_id);
             $new_client_2->save();
 
             //Act
