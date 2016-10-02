@@ -21,24 +21,24 @@
 
         function testSave() {
 
-            //Arrange
+            //ARRANGE
             $id = null;
             $name = "Lisa Marie";
             $stylist_id = 1;
             $new_client_test = new Client($id, $name, $stylist_id);
             $new_client_test->save();
 
-            //Act
+            //ACT
             $result = $new_client_test::getAll();
 
-            //Assert
+            //ASSERT
 
             $this->assertEquals($new_client_test, $result[0]);
         }
 
         function testGetAll() {
 
-            //Arrange
+            //ARRANGE
                 // ---- save a new client ----
             $id = null;
             $name_1 = "Lisa Marie";
@@ -53,23 +53,37 @@
             $new_client_2 = new Client($id, $name_2, $stylist_id);
             $new_client_2->save();
 
-            //Act
+            //ACT
             $result = Client::getAll();
 
-            //Assert
+            //ASSERT
             $this->assertEquals([$new_client_1, $new_client_2], $result);
         }
 
-        // function testDeleteAll() {
-        //
-        //     //Arrange
-        //
-        //
-        //     //Act
-        //
-        //
-        //     //Assert
-        // }
+        function testDeleteAll() {
+
+            //ARRANGE
+                // ---- save a new client ----
+            $id = null;
+            $name_1 = "Lisa Marie";
+            $stylist_id = 1;
+            $new_client_1 = new Client($id, $name_1, $stylist_id);
+            $new_client_1->save();
+
+                // ---- save another new client ----
+            $id = null;
+            $name_2 = "Jane Doe";
+            $stylist_id = 1;
+            $new_client_2 = new Client($id, $name_2, $stylist_id);
+            $new_client_2->save();
+
+            //ACT
+            Client::deleteAll();
+            $result = Client::getAll();
+
+            //ASSERT
+            $this->assertEquals([], $result);
+        }
     }
 
 
