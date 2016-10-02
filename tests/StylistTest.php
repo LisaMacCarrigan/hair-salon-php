@@ -31,7 +31,6 @@
 
             // ASSERT
             $this->assertEquals($new_stylist_test, $result[0]);
-
         }
 
         function testGetAll() {
@@ -52,7 +51,6 @@
 
             // ASSERT
             $this->assertEquals([$new_stylist_1, $new_stylist_2], $result);
-
         }
 
         function testDeleteAll() {
@@ -74,7 +72,6 @@
 
             // ASSERT
             $this->assertEquals([], $result);
-
         }
 
         function testFind() {
@@ -90,7 +87,6 @@
 
             // ASSERT
             $this->assertEquals($new_stylist, $result);
-
         }
 
         function testUpdateStylist() {
@@ -108,7 +104,27 @@
 
           // ASSERT
           $this->assertEquals($new_stylist_name, $new_stylist->getStylistName());
+        }
 
+        function testDelete() {
+
+            // ARRANGE
+                // ---- save a new stylist ----
+            $id = null;
+            $name_1 = "Kyle Krieger";
+            $new_stylist_1 = new Stylist($id, $name_1);
+            $new_stylist_1->save();
+                // ---- save another new stylist ----
+            $name_2 = "Nicky Clarke";
+            $new_stylist_2 = new Stylist($id, $name_2);
+            $new_stylist_2->save();
+
+            // ACT
+            $new_stylist_1->delete();
+
+            // ASSERT
+            $result = Stylist::getAll();
+            $this->assertEquals([$new_stylist_2], $result);
         }
 
     }
