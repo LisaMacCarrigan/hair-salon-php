@@ -100,6 +100,25 @@
             //ASSERT
             $this->assertEquals($new_client, $result);
         }
+
+        function testUpdateClient() {
+
+            // ARRANGE
+            $id = null;
+            $name = "Lisa Marie";
+            $stylist_id = 1;
+            $new_client = new Client($id, $name, $stylist_id);
+            $new_client->save();
+
+            $new_client_name = "Frances";
+
+            // ACT
+            $new_client->updateClient($new_client_name);
+
+            // ASSERT
+            $this->assertEquals($new_client_name, $new_client->getClientName());
+
+        }
     }
 
 
