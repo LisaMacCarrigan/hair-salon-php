@@ -25,11 +25,14 @@
         return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
     });
 
-    $app->get("/add_stylist", function() use ($app) {
-        $new_stylist_name = $_GET["input-stylist-name"];
+    $app->post("/add_stylist", function() use ($app) {
+        $new_stylist_name = $_POST["input-stylist-name"];
         $new_stylist = new Stylist($new_stylist_name);
         $new_stylist->save();
+        return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
     });
+
+
 
     return $app;
  ?>
