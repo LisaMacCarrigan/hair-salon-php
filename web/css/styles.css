@@ -1,0 +1,15 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+@font-face {
+    font-family: 'hair';
+    src: url('../fonts/HairyMonster.ttf');
+}
+
+#brand {
+    font-family: 'hair';
+    color: orange;
+    font-size: 6.0em;
+}
