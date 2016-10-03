@@ -95,9 +95,6 @@
             return $clients;
         }
 
-
     }
-
-
 
 ?>

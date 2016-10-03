@@ -14,13 +14,15 @@
     $DB = new PDO($server, $username, $password);
 
     class ClientTest extends PHPUnit_Framework_TestCase {
-        protected function tearDown() {
+
+        protected function tearDown()
+        {
             Client::deleteAll();
             Stylist::deleteAll();
         }
 
-        function testSave() {
-
+        function testSave()
+        {
             //ARRANGE
             $id = null;
             $name = "Lisa Marie";
@@ -36,8 +38,8 @@
             $this->assertEquals($new_client_test, $result[0]);
         }
 
-        function testGetAll() {
-
+        function testGetAll()
+        {
             //ARRANGE
                 // ---- save a new client ----
             $id = null;
@@ -60,8 +62,8 @@
             $this->assertEquals([$new_client_1, $new_client_2], $result);
         }
 
-        function testDeleteAll() {
-
+        function testDeleteAll()
+        {
             //ARRANGE
                 // ---- save a new client ----
             $id = null;
@@ -85,8 +87,8 @@
             $this->assertEquals([], $result);
         }
 
-        function testFind() {
-
+        function testFind()
+        {
             //ARRANGE
             $id = null;
             $name = "Lisa Marie";
@@ -101,8 +103,8 @@
             $this->assertEquals($new_client, $result);
         }
 
-        function testUpdateClient() {
-
+        function testUpdateClient()
+        {
             // ARRANGE
             $id = null;
             $name = "Lisa Marie";
@@ -117,7 +119,36 @@
 
             // ASSERT
             $this->assertEquals($new_client_name, $new_client->getClientName());
+        }
 
+        function testDelete()
+        {
+            // ARRANGE
+                // ---- save a new client ----
+            $id = null;
+            $name_1 = "Lisa Marie";
+            $stylist_id = 1;
+            $new_client_1 = new Client($id, $name_1, $stylist_id);
+            $new_client_1->save();
+
+                // ---- save another new client ----
+            $id = null;
+            $name_2 = "Jane Doe";
+            $stylist_id = 1;
+            $new_client_2 = new Client($id, $name_2, $stylist_id);
+            $new_client_2->save();
+
+                // ---- save a new stylist ----
+            $id = null;
+            $name = "Kyle Krieger";
+            $new_stylist = new Stylist($id, $name);
+            $new_stylist->save();
+
+            // ACT
+            $new_client_1->delete();
+
+            // ASSERT
+            $this->assertEquals([$new_client_2], Client::getAll());
         }
     }
 

@@ -63,6 +63,11 @@
             $GLOBALS['DB']->exec("DELETE FROM clients;");
         }
 
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM clients where id = {$this->getId()};");
+        }
+
         static function find($search_id) {
             $client_search_result = null;
             $clients = Client::getAll();
