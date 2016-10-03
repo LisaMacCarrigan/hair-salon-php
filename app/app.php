@@ -32,6 +32,11 @@
         return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
     });
 
+    $app->post("delete_cuisines", function() use ($app) {
+        Stylist::deleteAll();
+        return $app["twig"]->render("stylists.html.twig");
+    });
+
 
 
     return $app;
