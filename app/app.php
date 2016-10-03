@@ -16,7 +16,19 @@
     Request::enableHttpMethodParameterOverride();
 
     $app->get("/", function() use ($app) {
-        return $app["twig"]->render("index.html.twig", array('stylists' => Stylists::getAll()));
+        return $app["twig"]->render("index.html.twig");
+    });
+
+//--------------------------- Stylists ----------------------------//
+
+    $app->get("/stylists", function() use ($app) {
+        return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
+    });
+
+    $app->get("/add_stylist", function() use ($app) {
+        $new_stylist_name = $_GET["input-stylist-name"];
+        $new_stylist = new Stylist($new_stylist_name);
+        $new_stylist->save();
     });
 
     return $app;

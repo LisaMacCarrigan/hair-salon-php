@@ -42,7 +42,7 @@
         {
             // ARRANGE
                 // ---- save a new stylist so that it has an id ----
-            $id = 1;
+            $id = null;
             $name = "Kyle Krieger";
             $new_stylist = new Stylist($id, $name);
             $new_stylist->save();

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    {% include "partials/stylists_header.html" %}
+    <body>
+        <div class="container">
+            <h1 id="brand">Stylists</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Existing Stylists</h3>
+                    {% if stylists is not empty %}
+                        <ul>
+                            {% for stylist in stylists %}
+                                <li>{{ stylist.getStylistName }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h3>Add New Stylist</h3>
+                    {% include "partials/stylist_form.html"%}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="/">
+                        <button type="submit" class="btn btn-default">Go Back</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
