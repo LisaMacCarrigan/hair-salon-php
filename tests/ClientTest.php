@@ -38,6 +38,28 @@
             $this->assertEquals($new_client_test, $result[0]);
         }
 
+        function testGetId()
+        {
+            // ARRANGE
+                // ---- save a new stylist so that it has an id ----
+            $id = 1;
+            $name = "Kyle Krieger";
+            $new_stylist = new Stylist($id, $name);
+            $new_stylist->save();
+            $new_stylist_id = $new_stylist->getId();
+
+                // ---- save a new client ----
+            $id = 1;
+            $name= "Jane Doe";
+            $new_client = new Client($id, $name, $new_stylist_id);
+
+            // ACT
+            $result = $new_client->getId();
+
+            // ASSERT
+            $this->assertEquals($id, $result);
+        }
+
         function testGetAll()
         {
             //ARRANGE
