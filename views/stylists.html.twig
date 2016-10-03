@@ -8,11 +8,14 @@
                 <div class="col-md-6">
                     <h3>Stylists</h3>
                     {% if stylists is not empty %}
-                        <ul>
+                        <ul class="list-group">
                             {% for stylist in stylists %}
-                                <li>{{ stylist.getStylistName }}</li>
+                                <li class="list-group-item">{{ stylist.getStylistName }}</li>
                             {% endfor %}
                         </ul>
+                        <form action='/delete_cuisines' method='post'>
+                            <button class="btn btn-danger" type='submit'>Delete All</button>
+                        </form>
                     {% else %}
                     <p><em>There are currently no stylists</em></p>
                     {% endif %}
@@ -26,6 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <br><hr>
                     <form action="/">
                         <button type="submit" class="btn btn-default">Go Back</button>
                     </form>
