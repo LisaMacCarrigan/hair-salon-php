@@ -32,12 +32,16 @@
         return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
     });
 
-    $app->post("delete_cuisines", function() use ($app) {
+    $app->post("delete_clients", function() use ($app) {
         Stylist::deleteAll();
         return $app["twig"]->render("stylists.html.twig");
     });
 
+//--------------------------- Clients ----------------------------//
 
+    $app->get("/clients", function() use ($app) {
+        return $app["twig"]->render("clients.html.twig", array("clients" => Clients::getAll()));
+    });
 
     return $app;
  ?>

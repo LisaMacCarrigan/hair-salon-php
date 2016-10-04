@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    {% include "partials/stylists_header.html" %}
+    {% include "partials/clients_header.html" %}
     <body>
         <div class="container">
-            <h1 id="brand">Stylists</h1>
+            <h1 id="brand">Clients</h1>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Stylists</h3>
-                    {% if stylists is not empty %}
+                    <h3>Clients</h3>
+                    {% if clients is not empty %}
                         <ul class="list-group">
-                            {% for stylist in stylists %}
-                                <li class="list-group-item">{{ stylist.getStylistName }}</li>
+                            {% for client in clients %}
+                                <li class="list-group-item">{{ client.getClientName }}</li>
                             {% endfor %}
                         </ul>
                         <form action='/delete_clients' method='post'>
                             <button class="btn btn-danger" type='submit'>Delete All</button>
                         </form>
                     {% else %}
-                    <p><em>There are currently no stylists</em></p>
+                    <p><em>There are currently no clients</em></p>
                     {% endif %}
                 </div>
                 <div class="col-md-6">
                     <h3>Add New</h3>
-                    {% include "partials/stylist_form.html"%}
+                    {% include "partials/client_form.html"%}
                 </div>
             </div>
         </div>
