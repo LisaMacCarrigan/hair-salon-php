@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    {% include "partials/stylists_header.html" %}
+    <body>
+        <div class="container">
+            <h1>{{single_stylist.getStylistName}}</h1>
+            <p><a href="/stylists/{{single_stylist.getId}}/edit">Edit</a></p>
+            <form action="/stylists/{{single_stylist.getId}}" method="post">
+                <input name="_method" type="hidden" value="delete">
+                <button type="submit">Delete This Stylist</button>
+            </form>
+
+            <h3>Assign client to stylist:</h3>
+            <form action="/stylists/{{single_stylist.getId}}" method="post">
+                <input id="current_stylist_id" name="current_stylist_id" type="hidden" value="{{single_stylist.getId}}">
+                <label>Select a client</label>
+                <select id="client_id" name="client_id" type="text">
+                    {% for current_client in all_clients %}
+                        <option value="{{current_client.getId}}">{{current_client.getName}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Add</button>
+            </form>
+
+            <h3>All clients</h3>
+            {% for client in clients_in_this_stylist %}
+                <p>{{client.getClientName}}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
