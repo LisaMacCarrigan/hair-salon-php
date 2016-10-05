@@ -41,15 +41,20 @@
 
     $app->get("/stylists/{id}", function($id) use($app) {
         $stylist = Stylist::find($id);
-        return $app["twig"]->render("stylist.html.twig", array("stylist" => $stylist, "clients" => $stylist->getClients()));
+        return $app["twig"]->render("stylist.html.twig", array(
+            "stylist" => $stylist,
+            "clients" => $stylist->getClients()
+        ));
     });
-
 
 
 //--------------------------- Clients Logic ----------------------------//
 
     $app->get("/clients", function() use ($app) {
-        return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll(), "stylists" => Stylist::getAll()));
+        return $app["twig"]->render("clients.html.twig", array(
+            "clients" => Client::getAll(),
+            "stylists" => Stylist::getAll()
+        ));
     });
 
     $app->post("/add_client", function() use ($app) {
@@ -57,15 +62,23 @@
         $stylist_id = $_POST["stylist_id"];
         $new_client = new Client($new_client_name, $stylist_id);
         $new_client->save();
-        return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll(), "stylists" => Stylist::getAll()));
+        return $app["twig"]->render("clients.html.twig", array(
+            "clients" => Client::getAll(),
+            "stylists" => Stylist::getAll()
+        ));
     });
 
     $app->post("delete_clients", function() use ($app) {
         Client::deleteAll();
-        return $app["twig"]->render("clients.html.twig", array("stylists" => Stylist::getAll()));
+        return $app["twig"]->render("clients.html.twig", array(
+            "stylists" => Stylist::getAll()
+        ));
     });
 
     //--------------------------- Individual Client Logic ----------------------------//
+
+
+
 
     return $app;
  ?>
