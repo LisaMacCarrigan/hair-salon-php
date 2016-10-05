@@ -49,17 +49,15 @@
 //--------------------------- Clients Logic ----------------------------//
 
     $app->get("/clients", function() use ($app) {
-        return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll()));
+        return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll(), "stylists" => Stylist::getAll()));
     });
 
     $app->post("/add_client", function() use ($app) {
-        $id = null;
         $new_client_name = $_POST["input-client-name"];
         $stylist_id = $_POST["stylist_id"];
-        $new_client = new Client($id, $new_client_name, $stylist_id);
+        $new_client = new Client($new_client_name, $stylist_id);
         $new_client->save();
-        $stylist = Stylist::find($stylist_id);
-        return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll()));
+        return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll(), "stylists" => Stylist::getAll()));
     });
 
     $app->post("delete_clients", function() use ($app) {
