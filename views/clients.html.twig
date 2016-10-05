@@ -10,7 +10,8 @@
                     {% if clients is not empty %}
                         <ul class="list-group">
                             {% for client in clients %}
-                                <li class="list-group-item"><a href="/clients/{{ client.getId }}"> {{ client.getClientName }} </a></li>
+                                <li class="list-group-item">
+                                    <a href="/clients/{{ client.getId }}"> {{ client.getClientName }} </a></li>
                             {% endfor %}
                         </ul>
                         <form action='/delete_clients' method='post'>

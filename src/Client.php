@@ -2,15 +2,15 @@
 
     class Client
     {
-        private $id;
         private $name;
         private $stylist_id;
+        private $id;
 
-        function __construct($id = null, $client_name_input, $the_stylist_id)
+        function __construct($client_name_input, $the_stylist_id, $id = null)
         {
-            $this->id = $id;
             $this->name = $client_name_input;
             $this->stylist_id = $the_stylist_id;
+            $this->id = $id;
         }
 
         function getId()
@@ -49,10 +49,10 @@
             $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients");
             $clients = array();
             foreach($returned_clients as $client) {
-                $id = $client['id'];
                 $name = $client['name'];
                 $stylist_id = $client['stylist_id'];
-                $new_client = new Client($id, $name, $stylist_id);
+                $id = $client['id'];
+                $new_client = new Client($name, $stylist_id, $id);
                 array_push($clients, $new_client);
             }
             return $clients;

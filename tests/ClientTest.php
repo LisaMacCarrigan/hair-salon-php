@@ -24,10 +24,10 @@
         function testSave()
         {
             //ARRANGE
-            $id = null;
             $name = "Lisa Marie";
             $stylist_id = 1;
-            $new_client_test = new Client($id, $name, $stylist_id);
+            $id = null;
+            $new_client_test = new Client($name, $stylist_id, $id);
             $new_client_test->save();
 
             //ACT
@@ -49,9 +49,9 @@
             $new_stylist_id = $new_stylist->getId();
 
                 // ---- save a new client ----
-            $id = 1;
             $name= "Jane Doe";
-            $new_client = new Client($id, $name, $new_stylist_id);
+            $id = 1;
+            $new_client = new Client($name, $new_stylist_id, $id);
 
             // ACT
             $result = $new_client->getId();
@@ -64,17 +64,17 @@
         {
             //ARRANGE
                 // ---- save a new client ----
-            $id = null;
             $name_1 = "Lisa Marie";
             $stylist_id = 1;
-            $new_client_1 = new Client($id, $name_1, $stylist_id);
+            $id = null;
+            $new_client_1 = new Client($name_1, $stylist_id, $id);
             $new_client_1->save();
 
                 // ---- save another new client ----
             $id = null;
             $name_2 = "Jane Doe";
             $stylist_id = 1;
-            $new_client_2 = new Client($id, $name_2, $stylist_id);
+            $new_client_2 = new Client($name_2, $stylist_id, $id);
             $new_client_2->save();
 
             //ACT
@@ -88,19 +88,18 @@
         {
             //ARRANGE
                 // ---- save a new client ----
-            $id = null;
             $name_1 = "Lisa Marie";
             $stylist_id = 1;
-            $new_client_1 = new Client($id, $name_1, $stylist_id);
+            $id = null;
+            $new_client_1 = new Client($name_1, $stylist_id, $id);
             $new_client_1->save();
 
                 // ---- save another new client ----
             $id = null;
             $name_2 = "Jane Doe";
             $stylist_id = 1;
-            $new_client_2 = new Client($id, $name_2, $stylist_id);
+            $new_client_2 = new Client($name_2, $stylist_id, $id);
             $new_client_2->save();
-
             //ACT
             Client::deleteAll();
             $result = Client::getAll();
@@ -112,10 +111,10 @@
         function testFind()
         {
             //ARRANGE
-            $id = null;
             $name = "Lisa Marie";
             $stylist_id = 1;
-            $new_client = new Client($id, $name, $stylist_id);
+            $id = null;
+            $new_client = new Client($name, $stylist_id, $id);
             $new_client->save();
 
             //ACT
@@ -128,10 +127,10 @@
         function testUpdateClient()
         {
             // ARRANGE
-            $id = null;
             $name = "Lisa Marie";
             $stylist_id = 1;
-            $new_client = new Client($id, $name, $stylist_id);
+            $id = null;
+            $new_client = new Client($name, $stylist_id, $id);
             $new_client->save();
 
             $new_client_name = "Frances";
@@ -147,23 +146,23 @@
         {
             // ARRANGE
                 // ---- save a new client ----
-            $id = null;
             $name_1 = "Lisa Marie";
             $stylist_id = 1;
-            $new_client_1 = new Client($id, $name_1, $stylist_id);
+            $id = null;
+            $new_client_1 = new Client($name_1, $stylist_id, $id);
             $new_client_1->save();
 
                 // ---- save another new client ----
-            $id = null;
             $name_2 = "Jane Doe";
             $stylist_id = 1;
-            $new_client_2 = new Client($id, $name_2, $stylist_id);
+            $id = null;
+            $new_client_2 = new Client($name_2, $stylist_id, $id);
             $new_client_2->save();
 
                 // ---- save a new stylist ----
-            $id = null;
             $name = "Kyle Krieger";
-            $new_stylist = new Stylist($id, $name);
+            $id = null;
+            $new_stylist = new Stylist($name, $id);
             $new_stylist->save();
 
             // ACT

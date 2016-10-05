@@ -53,9 +53,9 @@
     });
 
     $app->post("/add_client", function() use ($app) {
+        $id = null;
         $new_client_name = $_POST["input-client-name"];
         $stylist_id = $_POST["stylist_id"];
-        $id = null;
         $new_client = new Client($id, $new_client_name, $stylist_id);
         $new_client->save();
         $stylist = Stylist::find($stylist_id);
