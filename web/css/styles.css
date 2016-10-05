@@ -21,6 +21,7 @@ body {
 #brand {
     text-align: center;
     font-family: 'hair';
+    color: orange;
     font-size: 3.5em;
     text-shadow: 4px 4px 4px white;
     -webkit-text-shadow: 4px 4px 4px white;
