@@ -23,10 +23,9 @@
                 </div>
                 <div class="col-md-6">
                     {% if stylists is not empty %}
-                        <h3>Add New</h3>
+                        <h3>Add New Client</h3>
                         <form action="/add_client" method="post">
                             <div class="form-group">
-                                <label for="input-client-name">Name:</label>
                                 <input id="input-client-name" name="input-client-name" class="form-control" type="text" placeholder="Enter name" required>
                                 <h3>Assign Stylist</h3>
 
@@ -41,18 +40,17 @@
                     {% else %}
                     <div>
                         <h3>Note:</h3>
-                        <p><em>A client cannot be added until there is a stylist.</em></p><a href="/stylists">Add Stylist</a>
+                        <p><em>A client cannot be added until there is a stylist.</em></p><strong><a href="/stylists">Add Stylist Now</strong></a>
                     </div>
                     {% endif %}
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container home-link">
             <div class="row">
                 <div class="col-md-12">
-                    <br><hr>
                     <form action="/">
-                        <button type="submit" class="btn btn-default">Go Back</button>
+                        <button type="submit" class="btn btn-default"><< Go Back</button>
                     </form>
                 </div>
             </div>

@@ -1,9 +1,43 @@
+body {
+    background-image: url('../img/cat.jpg');
+    font-family: 'avenir', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    height: 100%;
+    width: auto;
+}
+
+.home-page .row {
+    text-align: center;
+}
+
 @font-face {
     font-family: 'hair';
     src: url('../fonts/HairyMonster.ttf');
 }
 
 #brand {
+    text-align: center;
     font-family: 'hair';
-    font-size: 5.0em;
+    font-size: 3.5em;
+    text-shadow: 4px 4px 4px white;
+    -webkit-text-shadow: 4px 4px 4px white;
+    -moz-text-shadow: 4px 4px 4px white;
+    -ms-text-shadow: 4px 4px 4px white;
+}
+
+.container {
+    width: 70%;
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.container:nth-child(2) {
+    background-color: transparent;
 }
