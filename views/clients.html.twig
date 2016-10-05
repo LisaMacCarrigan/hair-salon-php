@@ -27,9 +27,9 @@
                         <div class="form-group">
                             <label for="input-client-name">Name:</label>
                             <input id="input-client-name" name="input-client-name" class="form-control" type="text" placeholder="Enter name" required>
-                            <h3>Assign Stylist to New Client</h3>
+                            <h3>Assign Stylist</h3>
 
-                            <select id="stylist_id" name="stylist_id" type="text">
+                            <select id="stylist_id" name="stylist_id" class="form-control" type="text">
                                 {% for stylist in stylists %}
                                     <option value="{{ stylist.getId }}">{{ stylist.getStylistName }}</option>
                                 {% endfor %}

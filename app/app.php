@@ -62,7 +62,7 @@
 
     $app->post("delete_clients", function() use ($app) {
         Client::deleteAll();
-        return $app["twig"]->render("clients.html.twig");
+        return $app["twig"]->render("clients.html.twig", array("stylists" => Stylist::getAll()));
     });
 
     //--------------------------- Individual Client Logic ----------------------------//
