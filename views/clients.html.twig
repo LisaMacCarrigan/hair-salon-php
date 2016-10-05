@@ -38,6 +38,11 @@
                             </div>
                             <button type="submit" class="btn btn-success">Add</button>
                         </form>
+                    {% else %}
+                    <div>
+                        <h3>Note:</h3>
+                        <p><em>A client cannot be added until there is a stylist.</em></p><a href="/stylists">Add Stylist</a>
+                    </div>
                     {% endif %}
                 </div>
             </div>
