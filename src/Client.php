@@ -78,8 +78,8 @@
                 {
                     $client_search_result = $client;
                 }
-                return $client_search_result;
             }
+            return $client_search_result;
         }
 
         function updateClient($new_client_name)

@@ -67,8 +67,8 @@
                 {
                     $stylist_search_result = $stylist;
                 }
-                return $stylist_search_result;
             }
+            return $stylist_search_result;
         }
 
         function updateStylist($new_stylist_name)

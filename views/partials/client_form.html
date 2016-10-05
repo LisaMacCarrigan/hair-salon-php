@@ -1,5 +1,6 @@
 <form action="/add_client" method="post">
     <div class="form-group">
+        <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
         <label for="input-client-name">Name:</label>
         <input id="input-client-name" name="input-client-name" class="form-control" type="text" placeholder="Enter name" required>
     </div>

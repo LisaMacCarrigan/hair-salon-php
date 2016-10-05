@@ -10,10 +10,11 @@
                     {% if stylists is not empty %}
                         <ul class="list-group">
                             {% for stylist in stylists %}
-                                <li class="list-group-item"><a href="/stylists/{{ stylist.getId }}"> {{ stylist.getStylistName }} </a></li>
+                                <li class="list-group-item">
+                                    <a href="/stylists/{{ stylist.getId }}"> {{ stylist.getStylistName }} </a></li>
                             {% endfor %}
                         </ul>
-                        <form action='/delete_clients' method='post'>
+                        <form action='/delete_stylists' method='post'>
                             <button class="btn btn-danger" type='submit'>Delete All</button>
                         </form>
                     {% else %}

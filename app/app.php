@@ -19,19 +19,10 @@
         return $app["twig"]->render("index.html.twig");
     });
 
-//--------------------------- Stylists ----------------------------//
+//--------------------------- Stylists Logic ----------------------------//
 
     $app->get("/stylists", function() use ($app) {
         return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
-    });
-
-    $app->get("/stylists/{stylist_id}", function($stylist_id) use($app) {
-    $current_stylist = Stylist::find($stylist_id);
-        return $app['twig']->render('stylist.html.twig', array(
-            'single_stylist' => $current_stylist,
-            'all_clients' => Client::getAll(),
-            'clients_for_this_stylist' => $current_stylist->getClients()
-        ));
     });
 
     $app->post("/add_stylist", function() use ($app) {
@@ -46,9 +37,16 @@
         return $app["twig"]->render("stylists.html.twig");
     });
 
+//--------------------------- Individual Stylist Logic ----------------------------//
+
+    $app->get("/stylists/{id}", function($id) use($app) {
+        $stylist = Stylist::find($id);
+        return $app["twig"]->render("stylist.html.twig", array("stylist" => $stylist, "clients" => $stylist->getClients()));
+    });
 
 
-//--------------------------- Clients ----------------------------//
+
+//--------------------------- Clients Logic ----------------------------//
 
     $app->get("/clients", function() use ($app) {
         return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll()));
@@ -56,9 +54,11 @@
 
     $app->post("/add_client", function() use ($app) {
         $new_client_name = $_POST["input-client-name"];
+        $stylist_id = $_POST["stylist_id"];
         $id = null;
-        $new_client = new Client($id, $new_client_name);
+        $new_client = new Client($id, $new_client_name, $stylist_id);
         $new_client->save();
+        $stylist = Stylist::find($stylist_id);
         return $app["twig"]->render("clients.html.twig", array("clients" => Client::getAll()));
     });
 
@@ -66,6 +66,8 @@
         Client::deleteAll();
         return $app["twig"]->render("clients.html.twig");
     });
+
+    //--------------------------- Individual Client Logic ----------------------------//
 
     return $app;
  ?>
