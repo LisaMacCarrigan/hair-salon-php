@@ -1,8 +1,10 @@
 # hair-salon-php
 
-#### An application for a hair salon that helps with the management of stylists and their clients. 09.26.2016
+#### An application for a hair salon that helps with the management of stylists and their clients. 10.06.2016
 
-#### By **Lisa MacCarrigan**
+#### By [Lisa MacCarrigan] (https://github.com/lisamaccarrigan)
+
+![screenshot of project main page](web-app.png)
 
 ## Description
 
@@ -13,39 +15,15 @@ This is a web application for a hair salon that allows an owner to add stylists,
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
 | Save New Stylist | "Lisa" | "Lisa" |
 | Get/View All Stylists | n/a | list of stylists |
-
-#### 1. SAVE NEW STYLIST.
-
-* Example Input: "Kyle Krieger"
-* Example Output:
-
-#### 2. GET/VIEW ALL STYLISTS.
-
-* Example Input:
-* Example Output:
-
-#### 3. DELETE ALL STYLISTS
-
-* Example Input:
-* Example Output:
-
-#### 4. FIND STYLIST
-
-* Example Input:
-* Example Output:
-
-#### 5. UPDATE STYLIST
-
-* Example Input:
-* Example Output:
-
-#### 6. GET/VIEW ALL CLIENTS FOR A GIVEN STYLIST (via name)
-
-* Example Input:
-* Example Output:
-
-NOTE - Add similar specifications for client-centric user interactions
-
+| Delete All Stylists | | |
+| Find Stylist | | |
+| Update Stylist | | |
+| View All Clients For Given Stylist | | |
+| Save New Client | "Lisa" | "Lisa" |
+| Get/View All Clients | n/a | list of stylists |
+| Delete All Clients | | |
+| Find Client | | |
+| Update Client | | |
 
 
 ## Setup/Installation Requirements
