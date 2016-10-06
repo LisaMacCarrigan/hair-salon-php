@@ -3,7 +3,7 @@
     {% include "partials/clients_header.html" %}
     <body>
         <div class="container">
-            <h1>{{ client.getClientName }}</h1>
+            <h1>{{ client.getClientName }}</h1><a href="/clients/{{ client.getId }}/edit">Edit</a>
             <div clas="row">
                 <div class="col-md-6">
                     <h3>Stylist:</h3>

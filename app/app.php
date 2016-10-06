@@ -59,6 +59,23 @@
         ));
     });
 
+    $app->get("/stylists/{id}/edit", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        return $app["twig"]->render("stylist_edit.html.twig", array(
+            "stylist" => $stylist
+        ));
+    });
+
+    $app->patch("/stylists/{id}", function($id) use ($app) {
+        $name = $_POST["stylist_name"];
+        $stylist = Stylist::find($id);
+        $stylist->updateStylist($name);
+        return $app["twig"]->render("stylist.html.twig", array(
+            "stylist" => $stylist,
+            "clients" => $stylist->getClients()
+        ));
+    });
+
 
 //--------------------------- Clients Logic ----------------------------//
 
@@ -94,6 +111,25 @@
         $client_stylist_id = $client->getStylistId();
         $client_stylist = Stylist::find($client_stylist_id);
 
+        return $app["twig"]->render("client.html.twig", array(
+            "client" => $client,
+            "stylist" => $client_stylist
+        ));
+    });
+
+    $app->get("/clients/{id}/edit", function($id) use ($app) {
+        $client = Client::find($id);
+        return $app["twig"]->render("client_edit.html.twig", array(
+            "client" => $client
+        ));
+    });
+
+    $app->patch("/clients/{id}", function($id) use ($app) {
+        $updated_name = $_POST["client_name"];
+        $client = Client::find($id);
+        $client_stylist_id = $client->getStylistId();
+        $client_stylist = Stylist::find($client_stylist_id);
+        $client->updateClient($updated_name);
         return $app["twig"]->render("client.html.twig", array(
             "client" => $client,
             "stylist" => $client_stylist
