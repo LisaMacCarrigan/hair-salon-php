@@ -19,7 +19,7 @@
         return $app["twig"]->render("index.html.twig");
     });
 
-//--------------------------- Stylists Logic ----------------------------//
+//------------------------------ Stylists Logic ------------------------------//
 
     $app->get("/stylists", function() use ($app) {
         return $app["twig"]->render("stylists.html.twig", array("stylists" => Stylist::getAll()));
@@ -37,7 +37,7 @@
         return $app["twig"]->render("stylists.html.twig");
     });
 
-//--------------------------- Individual Stylist Logic ----------------------------//
+//------------------------- Individual Stylist Logic -------------------------//
 
     $app->get("/stylists/{id}", function($id) use($app) {
         $stylist = Stylist::find($id);
@@ -76,8 +76,16 @@
         ));
     });
 
+    $app->delete("/stylists/{id}", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        $stylist->delete();
+        return $app["twig"]->render("stylists.html.twig", array(
+            "stylists" => Stylist::getAll()
+        ));
+    });
 
-//--------------------------- Clients Logic ----------------------------//
+
+//------------------------------ Clients Logic -------------------------------//
 
     $app->get("/clients", function() use ($app) {
         return $app["twig"]->render("clients.html.twig", array(
@@ -104,7 +112,7 @@
         ));
     });
 
-    //--------------------------- Individual Client Logic ----------------------------//
+    //------------------------ Individual Client Logic -----------------------//
 
     $app->get("/clients/{id}", function($id) use($app) {
         $client = Client::find($id);
@@ -135,6 +143,17 @@
             "stylist" => $client_stylist
         ));
     });
+
+    $app->delete("/clients/{id}", function($id) use ($app) {
+        $client = Client::find($id);
+        $client->delete();
+        return $app["twig"]->render("clients.html.twig", array(
+            "clients" => Client::getAll()
+        ));
+    });
+
+
+
 
 
 
