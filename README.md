@@ -8,23 +8,22 @@
 
 ## Description
 
-This is a web application for a hair salon that allows an owner to add stylists, and for each stylist, add clients who see that stylist.
+This is a web application that allows a hair salon owner to add stylists and, for each stylist, add a list of clients. This demonstrates a one-to-many relationship.
 
 ## Specifications:
 | _Behavior_ | _Input_ | _Output_ |
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
-| Save New Stylist | "Lisa" | "Lisa" |
+| Add/Save New Stylist | Enter Name: "Kyle Krieger" | Stylists: "Kyle Krieger" |
 | Get/View All Stylists | n/a | list of stylists |
-| Delete All Stylists | | |
-| Find Stylist | | |
-| Update Stylist | | |
-| View All Clients For Given Stylist | | |
-| Save New Client | "Lisa" | "Lisa" |
-| Get/View All Clients | n/a | list of stylists |
-| Delete All Clients | | |
-| Find Client | | |
-| Update Client | | |
-
+| Delete All Stylists | select Delete All | There are currently no stylists |
+| Update/Edit Stylist | "Kyle Krieger Hair" | "Kyle Krieger Hair" |
+| Delete Stylist | select Delete | There are currently no stylists |
+| View All Clients For Given Stylist | select Stylists: Kyle Krieger | Clients: Ali Krieger |
+| Add/Save New Client | Enter Name: "Ali Krieger" | Clients: "Ali Krieger |
+| Get/View All Clients | n/a | list of clients |
+| Assign Stylist to Client |  |  |
+| Delete All Clients | select Delete All | There are currently no clients |
+| Update/Edit Client | "Ali Krieger!!" | "Ali Krieger!!" |
 
 ## Setup/Installation Requirements
 
