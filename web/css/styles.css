@@ -31,8 +31,6 @@ body {
     background-color: white;
     padding: 15px;
     border-radius: 10px;
-    border-style: double;
-    border-width: thick;
 }
 
 .container:nth-child(2) {
@@ -46,4 +44,8 @@ button {
 .main-menu {
     display: block;
     max-with: 50%;
+}
+
+.back-button {
+    margin-top: 15px;
 }
