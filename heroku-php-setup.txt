@@ -1,0 +1,32 @@
+1. Visit Heroku website, and create an account
+
+2. Navigate to top level of project directory in the terminal.
+
+3. Log in using the email address and password you used when creating your Heroku account:
+    $ heroku login
+
+4. Create an app on Heroku:
+    $ heroku create
+
+(Note: When you create an app, a git remote (called heroku) is also created and associated with your local git repository. Heroku generates a random name (in this case sharp-rain-871) for your app, or you can pass a parameter to specify your own app name.)
+
+5. Deploy your code:
+    $ git push heroku master
+
+6. Visit the app at the URL generated:
+    $ heroku open
+
+7. Define a Procfile in the root directory of your application:
+    $ touch Procfile
+    $ atom .Procfile
+
+8. Add following line of to Procfile:
+    web: vendor/bin/heroku-php-apache2 web/
+
+
+
+
+
+
+Resources:
+https://devcenter.heroku.com/articles/getting-started-with-php#set-up
