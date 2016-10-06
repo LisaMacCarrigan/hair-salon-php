@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/cat.jpg');
+    background-image: url('../img/cat.png');
     font-family: 'avenir', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,22 +9,35 @@ body {
     width: auto;
 }
 
+a {
+    color: #000000;
+}
+
 .home-page .row {
     text-align: center;
 }
 
 #brand {
     text-align: center;
+    display: block;
     font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 2.5em;
-    text-shadow: 4px 4px 4px white;
-    -webkit-text-shadow: 4px 4px 4px white;
-    -moz-text-shadow: 4px 4px 4px white;
-    -ms-text-shadow: 4px 4px 4px white;
+    font-size: 2.75em;
+    font-weight: bold;
+    color: #FFCC00;
+    text-shadow: -1px 1px 1px black;
+    -webkit-text-shadow: -1px 1px 1px black;
+    -moz-text-shadow: -1px 1px 1px black;
+    -ms-text-shadow: -1px 1px 1px black;
+}
+
+@media screen and (min-width: 520px) {
+    #brand {
+        font-size: 5.0em;
+    }
 }
 
 .container {
-    max-width: 60%;
+    width: 60%;
     margin-top: 15%;
     margin-left: 20%;
     margin-right: 20%;
@@ -33,7 +46,7 @@ body {
     border-radius: 10px;
 }
 
-.container:nth-child(2) {
+.home-page {
     background-color: transparent;
 }
 

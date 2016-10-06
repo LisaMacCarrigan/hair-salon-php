@@ -4,7 +4,7 @@
     <body>
         <div class="container">
             <h1>Update: {{ client.getClientName }}</h1>
-            <div clas="row">
+            <div class="row">
                 <div class="col-md-12">
                     <form action="/clients/{{ client.getId }}" method="post">
                       <input name="_method" type="hidden" value="patch">
@@ -18,7 +18,7 @@
                     <form action="/clients/{{ client.getId }}" method="post">
                       <input name="_method" type="hidden" value="delete">
 
-                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                      <button type="submit" class="btn btn-danger btn-xs">Delete</button>
                     </form>
                 </div>
             </div>
