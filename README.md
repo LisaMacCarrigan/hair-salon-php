@@ -2,13 +2,13 @@
 
 #### An application for a hair salon that helps with the management of stylists and their clients. 10.06.2016
 
-#### By [Lisa MacCarrigan] (https://github.com/lisamaccarrigan)
+#### By [Lisa MacCarrigan](https://github.com/lisamaccarrigan)
 
 ![screenshot of project main page](web-app.png)
 
 ## Description
 
-This is a web application that allows a hair salon owner to add stylists and, for each stylist, add a list of clients. This demonstrates a one-to-many relationship.
+This is a web application that allows a hair salon owner to add stylists and for each stylist, add a list of clients. This demonstrates a one-to-many relationship.
 
 ## Specifications:
 | _Behavior_ | _Input_ | _Output_ |
@@ -59,4 +59,4 @@ For comments or questions, please email Lisa.MacCarrigan@gmail.com
 
 *This application is licensed under the MIT license*
 
-Copyright (c) 2016 **Lisa MacCarrigan**
+Copyright (c) 2016 [Lisa MacCarrigan](https://github.com/lisamaccarrigan)
