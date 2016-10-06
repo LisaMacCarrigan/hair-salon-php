@@ -8,11 +8,15 @@
 
 This is a web application for a hair salon that allows an owner to add stylists, and for each stylist, add clients who see that stylist.
 
-## Specifications
+## Specifications:
+| _Behavior_ | _Input_ | _Output_ |
+|:---------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
+| Save New Stylist | "Lisa" | "Lisa" |
+| Get/View All Stylists | n/a | list of stylists |
 
 #### 1. SAVE NEW STYLIST.
 
-* Example Input:
+* Example Input: "Kyle Krieger"
 * Example Output:
 
 #### 2. GET/VIEW ALL STYLISTS.
