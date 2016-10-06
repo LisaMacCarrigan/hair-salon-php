@@ -89,6 +89,16 @@
 
     //--------------------------- Individual Client Logic ----------------------------//
 
+    $app->get("/clients/{id}", function($id) use($app) {
+        $client = Client::find($id);
+        $client_stylist_id = $client->getStylistId();
+        $client_stylist = Stylist::find($client_stylist_id);
+
+        return $app["twig"]->render("client.html.twig", array(
+            "client" => $client,
+            "stylist" => $client_stylist
+        ));
+    });
 
 
 
