@@ -13,23 +13,32 @@ This is a web application that allows a hair salon owner to add stylists and for
 ## Specifications:
 | _Behavior_ | _Input_ | _Output_ |
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
-| Add/Save New Stylist | Enter Name: "Kyle Krieger" | Stylists: "Kyle Krieger" |
+| Add/Save New Stylist | Enter Name: Kyle Krieger | Stylists: Kyle Krieger |
 | Get/View All Stylists | n/a | list of stylists |
-| Delete All Stylists | select Delete All | There are currently no stylists |
-| Update/Edit Stylist | "Kyle Krieger Hair" | "Kyle Krieger Hair" |
-| Delete Stylist | select Delete | There are currently no stylists |
+| Delete All Stylists | select 'Delete All' | There are currently no stylists |
+| Update/Edit Stylist | Kyle Krieger Hair | Kyle Krieger Hair |
+| Delete Stylist | select 'Delete' | There are currently no stylists |
 | View All Clients For Given Stylist | select Stylists: Kyle Krieger | Clients: Ali Krieger |
-| Add/Save New Client | Enter Name: "Ali Krieger" | Clients: "Ali Krieger |
+| Add/Save New Client | Enter Name: Ali Krieger | Clients: Ali Krieger |
 | Get/View All Clients | n/a | list of clients |
-| Assign Stylist to Client |  |  |
-| Delete All Clients | select Delete All | There are currently no clients |
-| Update/Edit Client | "Ali Krieger!!" | "Ali Krieger!!" |
+| Delete All Clients | select 'Delete All' | There are currently no clients |
+| Update/Edit Client | Ali Krieger!! | Ali Krieger!! |
 
 ## Setup/Installation Requirements
 
 If editing:
 * Clone this repository: https://github.com/LisaMacCarrigan/hair-salon-php.git
 * OPEN project folder ('hair-salon-php') in Code Editor of choice
+
+SQL Commands:
+* mysql> CREATE DATABASE hair_salon;
+* mysql> USE hair_salon;
+* mysql> SHOW DATABASES;
+* CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
+mysql> SHOW TABLES;
+* mysql> CREATE TABLE clients (id serial PRIMARY KEY, name varchar (255), stylist_id int);
+mysql> DESCRIBE client;
+
 * Install and Configure PHP development environment - Please visit http://goo.gl/JDBJ0p for easy-to-follow instructions by Epicodus. In general, you will need to:
     * Download and Install 'MAMP' by visiting: https://www.mamp.info/en/downloads/.
     * Download and Install PHP package manager called 'Composer'
