@@ -27,19 +27,17 @@ This is a web application that allows a hair salon owner to add stylists and for
 ## Setup/Installation Requirements
 
 If editing:
-* Clone this repository: https://github.com/LisaMacCarrigan/hair-salon-php.git
-* OPEN project folder ('hair-salon-php') in Code Editor of choice
+    * Clone this repository: https://github.com/LisaMacCarrigan/hair-salon-php.git
+    * OPEN project folder ('hair-salon-php') in Code Editor of choice
 
 SQL Commands:
-* mysql> CREATE DATABASE hair_salon;
-* mysql> USE hair_salon;
-* mysql> SHOW DATABASES;
-* CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
-mysql> SHOW TABLES;
-* mysql> CREATE TABLE clients (id serial PRIMARY KEY, name varchar (255), stylist_id int);
-mysql> DESCRIBE client;
+    * CREATE DATABASE hair_salon;
+    * USE hair_salon;
+    * SHOW DATABASES;
+    * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
+    * CREATE TABLE clients (id serial PRIMARY KEY, name varchar (255), stylist_id int);
 
-* Install and Configure PHP development environment - Please visit http://goo.gl/JDBJ0p for easy-to-follow instructions by Epicodus. In general, you will need to:
+Install and Configure PHP development environment - Please visit http://goo.gl/JDBJ0p for easy-to-follow instructions by Epicodus. In general, you will need to:
     * Download and Install 'MAMP' by visiting: https://www.mamp.info/en/downloads/.
     * Download and Install PHP package manager called 'Composer'
     * Inside of Terminal window, from the top level of your project folder, RUN the install command: > composer install
